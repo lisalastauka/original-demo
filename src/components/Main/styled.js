@@ -27,27 +27,28 @@ export const Title = styled.div`
   `}
 
   ${props=> props.dashed && `
-    border: 5px dashed white;
+    padding: 15px 30px;
+    border: 4px solid white;
     ${props.dashed === 'white' &&`
-      border: 5px dashed ${props.theme.colors.marine};
+      border: 4px solid ${props.theme.colors.marine};
     `};
     position: relative;
     ::after {
       width: calc( 100% + 16px);
-      height: calc( 100% - 10px);
+      height: calc( 100% - 16px);
       border-left: 10px solid white;
       border-right: 10px solid white;
       border-left: 10px solid ${props.theme.colors[props.dashed]};
       border-right: 10px solid ${props.theme.colors[props.dashed]};
       content: '';
       left: -8px;
-      top: 5px;
+      top: 8px;
       position: absolute;
     }
     ::before {
       top: -8px;
       height: calc( 100% + 16px );
-      width: calc( 100% - 10px );
+      width: calc( 100% - 16px );
       margin: 0 auto;
       border-top: 10px solid white;
       border-bottom: 10px solid white;
@@ -55,7 +56,7 @@ export const Title = styled.div`
       border-bottom: 10px solid ${props.theme.colors[props.dashed]};
       content: '';
       position: absolute;
-      left: 5px;
+      left: 8px;
     }
   `}
   ${props=> props.white && `
@@ -77,7 +78,7 @@ export const Title = styled.div`
 `;
 
 export const Dashed = styled.div`
-  border: 5px dashed ${props => props.theme.colors.marine};
+  border: 4px solid ${props => props.theme.colors.marine};
   position: relative;
   margin-bottom: 40px;
   width: fit-content;
@@ -92,7 +93,7 @@ export const Dashed = styled.div`
   `}
   ::after {
     width: calc( 100% + 16px);
-    height: calc( 100% - 10px);
+    height: calc( 100% - 20px);
     border-left: 10px solid white;
     border-right: 10px solid white;
     ${props => props.grey &&`
@@ -101,13 +102,13 @@ export const Dashed = styled.div`
     `}
     content: '';
     left: -8px;
-    top: 5px;
+    top: 10px;
     position: absolute;
   }
   ::before {
     top: -8px;
     height: calc( 100% + 16px );
-    width: calc( 100% - 10px );
+    width: calc( 100% - 20px );
     margin: 0 auto;
     border-top: 10px solid white;
     border-bottom: 10px solid white;
@@ -117,7 +118,7 @@ export const Dashed = styled.div`
     `}
     content: '';
     position: absolute;
-    left: 5px;
+    left: 10px;
   }
 `;
 
@@ -137,7 +138,7 @@ export const SubTitle = styled.div`
   ${props => props.main &&`
     line-height: 22px;
   `}
-  ${props => props.main && media.desktop`
+  ${props => props.main && media.tablet`
     margin-bottom: 40px;
     line-height: 32px;
   `}
@@ -177,21 +178,6 @@ export const Wrapper = styled.div`
   `}
   ${props => props.marine && `
     background: ${props.theme.colors.marine};
-  `}
-  ${props => props.home && `
-    background: url(/images/backgrounds/home-mobile.png) no-repeat 50%/contain ${props.theme.colors.marine};
-  `}
-  ${props => props.home && media.phone`
-    background: url(/images/backgrounds/home-tablet.png) no-repeat 50%/contain ${props.theme.colors.marine};
-  `}
-  ${props => props.home && media.tablet`
-    background: url(/images/backgrounds/home-desktop.png) no-repeat 50%/contain ${props.theme.colors.marine};
-  `}
-  ${props => props.home && media.desktop`
-    background: url(/images/backgrounds/home-desktophd.png) no-repeat 50%/contain ${props.theme.colors.marine};
-  `}
-  ${props => props.home && media.giant`
-    background: url(/images/backgrounds/home-desktophd.png) no-repeat 50%/contain ${props.theme.colors.marine};
   `}
   ${props => props.violet && `
     background: ${props.theme.colors.violet};
@@ -245,14 +231,6 @@ export const Container = styled.div`
 
   ${props => props.nopaddingtop && media.tablet`
     padding: 25px 70px 120px;
-  `}
-
-  ${props => props.nopadding &&`
-    padding: 25px;
-  `}
-
-  ${props => props.nopadding && media.tablet`
-    padding: 25px 70px;
   `}
 
   ${'' /* ${media.tablet`

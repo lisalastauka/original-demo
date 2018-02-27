@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Row, Col } from 'react-flexbox-grid';
+import { Col } from 'react-flexbox-grid';
 import media from '../../styled-components/media';
 import { SubTitle } from './../Main/styled';
 
@@ -14,7 +14,7 @@ export const Description = styled.div`
 `;
 
 export const Name = styled(SubTitle)`
-  margin-bottom: 23px;
+  margin-bottom: 20px;
   margin-top: 10px;
   ${media.desktop`
     margin-top: 0;
@@ -29,10 +29,15 @@ export const Image = styled.img`
 `;
 
 export const PersonalCard = styled(Col)`
-  padding-bottom: 25px;
+  padding-bottom: 40px;
   padding-left: 20px;
   padding-right: 20px;
   text-align: left;
+
+  ${media.phone`
+    padding-bottom: 25px;
+  `}
+
   ${media.tablet`
     padding-bottom: 75px;
   `}

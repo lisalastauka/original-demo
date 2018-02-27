@@ -1,23 +1,23 @@
 import React from 'react';
 import Header from '../Header';
 import Home from '../Home';
-import Promo from '../Promo';
-import WhatIs from '../WhatIs';
+/* import Promo from '../Promo'; */
+/* import WhatIs from '../WhatIs'; */
 import HowItWorks from '../HowItWorks';
-import Companies from '../Companies';
-import Advisers from '../Advisers';
+/* import Companies from '../Companies'; */
+import Advisors from '../Advisors';
 import Founders from '../Founders';
+import Speakers from '../Speakers';
 import Team from '../Team';
-import Partners from '../Partners';
+/* import Partners from '../Partners'; */
 import TokenSale from '../TokenSale';
 import Documents from '../Documents';
-import Socials from '../Socials';
+/* import Socials from '../Socials'; */
 import Footer from '../Footer';
 import Market from '../Market';
 import Roadmap from '../Roadmap';
 import Benefit from '../Benefit';
-import App from '../App';
-import Summary from '../Summary';
+import Demo from '../Demo';
 import Wrapper from './styled';
 import { Divider } from './styled';
 
@@ -35,13 +35,13 @@ export default class Main extends React.Component {
         <Market />
         <Roadmap />
         {/* <Companies /> */}
+        <Speakers />
         <Founders />
         <Team />
-        <Advisers />
+        <Advisors />
         {/* <Partners /> */}
         <TokenSale />
-        <Summary />
-        <App />
+        <Demo />
         <Documents />
         {/* <Socials /> */}
         <Footer />

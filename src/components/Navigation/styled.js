@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import media from '../../styled-components/media';
-import { Row, Col } from 'react-flexbox-grid';
+import { Col } from 'react-flexbox-grid';
 
 export const GoTo = styled.button`
   width: 100%;

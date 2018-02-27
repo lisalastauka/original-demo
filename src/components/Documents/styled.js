@@ -18,15 +18,6 @@ export const Content = styled(Row)`
   `}
 `;
 
-export const Description = styled(SubTitle)`
-  margin-bottom: 25px;
-  color: #818080;
-  ${media.desktop`
-    margin-bottom: 75px;
-    height: 90px;
-  `}
-`;
-
 export const Section = styled(Col)`
    padding-bottom: 75px;
    padding-right: 10px;

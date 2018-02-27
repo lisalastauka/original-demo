@@ -1,10 +1,9 @@
 import React from 'react';
-import { howItWorks } from './../../constants/texts';
-import media from '../../styled-components/media';
 import { Container, Title, Wrapper } from './../Main/styled';
 import { Platform, Box, Left, Right } from './styled';
 import { isMobile } from './../../utils/helpers';
 import { LogoSmall } from './../Logo';
+import { Translate as T } from 'react-i18nify';
 
 export default class HowItWorks extends React.Component {
   render() {
@@ -12,19 +11,23 @@ export default class HowItWorks extends React.Component {
       <Wrapper white className='section_work'>
         <Container>
           <Title marine>
-            <Box horizontal>
+            <Box>
               <Left >
-                КАК РАБОТАЕТ
+                <T value="howItWorks.title.left" />
               </Left>
               {!isMobile && <LogoSmall />}
               <Right>
                 {isMobile && <LogoSmall />}
-                OIN SPACE
+                <T value="howItWorks.title.right" />
               </Right>
             </Box>
           </Title>
-          <Platform desktop src='/images/main.svg' />
-          <Platform mobile src='/images/main_mobile.svg' />
+          <Platform desktop>
+            <T value="howItWorks.img.main" dangerousHTML />
+          </Platform>
+          <Platform mobile>
+            <T value="howItWorks.img.main_mobile" dangerousHTML />
+          </Platform>
         </Container>
       </Wrapper>
     );

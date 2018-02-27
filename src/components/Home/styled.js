@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import media from '../../styled-components/media';
+import { Wrapper } from './../Main/styled';
 import { Row } from 'react-flexbox-grid';
 
 export const Title = styled.div`
@@ -47,6 +48,24 @@ export const H1 = styled.div`
   ${media.desktop`
     font-size: ${props => props.theme.fontSize.titleLarge};
   `}
+
+  span span {
+    white-space: nowrap;
+  }
+
+  img {
+    width: 2.3rem;
+    margin-bottom: -1px;
+    ${media.tablet`
+      width: 3.7rem;
+      margin-bottom: -2px;
+    `}
+
+    ${media.desktop`
+      width: 5.6rem;
+      margin-bottom: -3px;
+    `}
+  }
 `;
 
 export const Status = styled(Row)`
@@ -94,6 +113,27 @@ export const ContainerThoung = styled.div`
     width: 1450px;
   `}
 `;
+
+
+export const HomeWrapper = styled(Wrapper)`
+  background-color: ${props => props.theme.colors.marine};
+  background-image: url(/images/backgrounds/home-mobile.png);
+  background-position: 50%/contain;
+  background-repeat: no-repeat;
+
+  ${media.phone`
+    background-image: url(/images/backgrounds/home-tablet.png);
+  `}
+  ${media.tablet`
+    background-image: url(/images/backgrounds/home-desktop.png);
+  `}
+  ${media.desktop`
+    background-image: url(/images/backgrounds/home-desktophd.png);
+  `}
+  ${media.giant`
+    background-image: url(/images/backgrounds/home-desktophd.png);
+  `}
+`
 
 export const Divider = styled.div`
   display: none;

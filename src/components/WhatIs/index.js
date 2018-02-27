@@ -1,18 +1,19 @@
 import React from 'react';
-import { Description, Play } from './styled';
+import { Translate as T } from 'react-i18nify';
 import { Container, Wrapper, Title } from './../Main/styled';
-import { whatIs } from './../../constants/texts';
+import { Description, Play } from './styled';
 
-export default class WhatIs extends React.Component {
-  render() {
-    return(
-      <Wrapper className='section_whatIs' background={`url(/images/backgrounds/video-desktophd.png) no-repeat 50%/cover`}>
-        <Container>
-          <Title main color='white'>{whatIs.title}</Title>
-          <Play/>
-          <Description white dangerouslySetInnerHTML={{__html: whatIs.description}}/>
-        </Container>
-      </Wrapper>
-    );
-  }
-}
+export default () =>(
+  {/*FIXME: Remove inline style*/}
+  <Wrapper className='section_whatIs' background={`url(/images/backgrounds/video-desktophd.png) no-repeat 50%/cover`}>
+    <Container>
+      <Title main color='white'>
+        <T value="whatIs.title" dangerousHTML />
+      </Title>
+      <Play/>
+      <Description white>
+        <T value="whatIs.description" dangerousHTML />
+      </Description>
+    </Container>
+  </Wrapper>
+);

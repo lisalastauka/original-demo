@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 import { Row } from 'react-flexbox-grid';
 import media from '../../../styled-components/media';
@@ -28,8 +27,9 @@ export const Digit = styled.div`
   `}
 `;
 
-export const Name = styled(({...rest}) => <SubTitle {...rest} />)`
+export const Name = styled(SubTitle)`
   text-align: center;
+  text-transform: uppercase;
   font-size: ${props => props.theme.fontSize.small};
   ${media.tablet`
     font-size: ${props => props.theme.fontSize.medium};

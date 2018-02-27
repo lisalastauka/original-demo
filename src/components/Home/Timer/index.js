@@ -1,35 +1,41 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import Countdown from 'react-countdown-now';
 import { Digit, Name, Section, Container } from './styled';
+import { Translate as T } from 'react-i18nify';
 
-// Random component
-const Completionist = () => <h1></h1>;
+const Completionist = () => <h1>Pre Sale Started</h1>;
 
-// Renderer callback with condition
 const renderer = ({ days, hours, minutes, seconds, completed }) => {
   if (completed) {
-    // Render a completed state
+
     return <Completionist />;
   } else {
-    // Render a countdown
+
     return (
       <Container start="xs" middle="xs">
         <Section>
           <Digit>{days}</Digit>
-          <Name violet>ДНЕЙ</Name>
+          <Name violet>
+            <T value="home.days" />
+          </Name>
         </Section>
         <Section>
           <Digit>{hours}</Digit>
-          <Name violet>ЧАСОВ</Name>
+          <Name violet>
+            <T value="home.hours" />
+          </Name>
         </Section>
         <Section>
           <Digit>{minutes}</Digit>
-          <Name violet>МИНУТ</Name>
+          <Name violet>
+            <T value="home.minutes" />
+          </Name>
         </Section>
         <Section>
           <Digit>{seconds}</Digit>
-          <Name violet>СЕКУНД</Name>
+          <Name violet>
+            <T value="home.seconds" />
+          </Name>
         </Section>
       </Container>
     );

@@ -1,6 +1,6 @@
 import React from 'react';
-import { Row, Col } from 'react-flexbox-grid';
-import { promo } from './../../constants/texts';
+import { Row } from 'react-flexbox-grid';
+import { Translate as T } from 'react-i18nify';
 import { Title, Description, Section, Image } from './styled';
 import { Container, Wrapper } from './../Main/styled';
 
@@ -11,23 +11,39 @@ export default class Promo extends React.Component {
         <Container nopaddingbottom>
           <Row between='xs'>
             <Section xs={12} sm={6} md={6} lg={3}>
-              <Title dangerouslySetInnerHTML={{__html: promo.team.title}} />
-              <Description>{promo.team.description}</Description>
+              <Title>
+                <T value="promo.team.title" dangerousHTML />
+              </Title>
+              <Description>
+                <T value="promo.team.description" dangerousHTML />
+              </Description>
               <Image src="http://via.placeholder.com/350x250"/>
             </Section>
             <Section xs={12} sm={6} md={6} lg={3}>
-              <Title dangerouslySetInnerHTML={{__html: promo.partners.title}} />
-              <Description>{promo.partners.description}</Description>
+              <Title>
+                <T value="promo.partners.title" dangerousHTML />
+              </Title>
+              <Description>
+                <T value="promo.partners.description" dangerousHTML />
+              </Description>
               <Image src="http://via.placeholder.com/350x250"/>
             </Section>
             <Section xs={12} sm={6} md={6} lg={3}>
-              <Title dangerouslySetInnerHTML={{__html: promo.interest.title}} />
-              <Description>{promo.interest.description}</Description>
+              <Title>
+                <T value="promo.interest.title" dangerousHTML />
+              </Title>
+              <Description>
+                <T value="promo.interest.description" dangerousHTML />
+              </Description>
               <Image src="http://via.placeholder.com/350x250"/>
             </Section>
             <Section xs={12} sm={6} md={6} lg={3}>
-              <Title dangerouslySetInnerHTML={{__html: promo.market.title}} />
-              <Description>{promo.market.description}</Description>
+              <Title>
+                <T value="promo.market.title" dangerousHTML />
+              </Title>
+              <Description>
+                <T value="promo.market.description" dangerousHTML />
+              </Description>
               <Image src="http://via.placeholder.com/350x250"/>
             </Section>
           </Row>

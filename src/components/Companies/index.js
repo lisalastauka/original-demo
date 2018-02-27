@@ -1,6 +1,6 @@
 import React from 'react';
-import { companies } from './../../constants/texts';
-import { Section, Image, Description, Content } from './styled';
+import { Translate as T } from 'react-i18nify';
+import { Image, Description, Content } from './styled';
 import { Container, Title, Wrapper } from './../Main/styled';
 
 export default class Companies extends React.Component {
@@ -8,8 +8,12 @@ export default class Companies extends React.Component {
     return (
       <Wrapper marine className='section_companies'>
         <Container>
-          <Title white dangerouslySetInnerHTML={{__html: companies.title}}/>
-          <Description white>{companies.description}</Description>
+          <Title white>
+            <T value='companies.title' dangerousHTML/>
+          </Title>
+          <Description white>
+            <T value='companies.description'/>
+          </Description>
           <Content around='xs'>
             <Image src="http://via.placeholder.com/118x118"/>
             <Image src="http://via.placeholder.com/118x118"/>

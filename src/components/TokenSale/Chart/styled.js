@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import media from '../../../styled-components/media';
 
 export const Chart = styled.div`
   justify-content: space-around ;

@@ -7,20 +7,30 @@ export const Section = styled(Row)`
   text-align: left;
 `;
 
-export const Info = styled.img`
-  width: 100%;
+export const Info = styled.div`
+  img {
+    width: 100%;
+  }
   ${props => props.desktop && `
-    display: none;
+    img {
+      display: none;
+    }
   `}
   ${props => props.desktop && media.tablet`
-    display: unset;
+    img {
+      display: unset;
+    }
   `}
   ${props => props.phone && `
-    display: unset;
-    max-width: 400px;
+    img {
+      display: unset;
+      max-width: 400px;
+    }
   `}
   ${props => props.phone && media.tablet`
-    display: none;
+    img {
+      display: none;
+    }
   `}
 `;
 
@@ -61,32 +71,6 @@ export const Header = styled.div`
   `}
 `;
 
-export const Content = styled.div`
-  font-family: ${props => props.theme.fonts.roboto.light};
-  font-size: ${props => props.theme.fontSize.regular};
-  margin: 0 auto 27px;
-  display: none;
-  ${media.tablet`
-    display: block;
-    font-size: ${props => props.theme.fontSize.medium};
-  `}
-`;
-
-export const Footer = styled.div`
-  font-family: ${props => props.theme.fonts.roboto.light};
-  font-size: ${props => props.theme.fontSize.smaller};
-  margin: 0 auto 98px;
-  display: none;
-  ${media.tablet`
-    display: block;
-    font-size: ${props => props.theme.fontSize.small};
-  `}
-`;
-
-export const Name = styled(Col)`
-  text-align: right;
-`;
-
 export const Description = styled.div`
   font-family: ${props => props.theme.fonts.roboto.light};
   font-size: ${props => props.theme.fontSize.small};
@@ -104,28 +88,4 @@ export const Image = styled.img`
   ${props => props.lg && `
     border-radius: 0;
   `}
-`;
-
-export const Subtitle = styled.div`
-  font-family: ${props => props.theme.fonts.roboto.medium};
-  font-size: ${props => props.theme.fontSize.regular};
-  margin-bottom: 11px;
-  ${media.tablet`
-    font-size: ${props => props.theme.fontSize.medium};
-  `}
-  ${props => props.invisible &&`
-    visibility: hidden;
-  `}
-`;
-
-export const Value = styled(Col)`
-  text-align: left;
-  div {
-    text-align: center;
-    display: inline-block;
-    height: 13px;
-    ${media.tablet`
-      height: 20px;
-    `}
-  }
 `;

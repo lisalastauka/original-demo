@@ -1,38 +1,43 @@
 import React from 'react';
-import { Row, Col } from 'react-flexbox-grid';
-import { benefit } from './../../constants/texts';
-import { Section, Image, Description, Header, Container, List} from './styled';
+import { Section, Container, List} from './styled';
 import { Wrapper, SubTitle } from './../Main/styled';
+import { Translate as T } from 'react-i18nify';
 
-export default class Benefit extends React.Component {
-  render() {
-    return (
-      <Wrapper nomargin white  className='section_benefit'>
-        <Container>
-          <Section bordered="true" xs={12} lg={6}>
-            <SubTitle violet>{benefit.first.header}</SubTitle>
-            <List>
-              {benefit.first.points.map(point => <li key={point} dangerouslySetInnerHTML={{__html: point}} />)}
-            </List>
-            <Image src='/images/consumer_mobile.svg' />
-          </Section>
-          <Section xs={12} lg={6}>
-            <SubTitle violet>{benefit.second.header}</SubTitle>
-            <List>
-              {benefit.second.points.map(point => <li key={point} dangerouslySetInnerHTML={{__html: point}} />)}
-            </List>
-            <Image src='/images/producer.svg' />
-          </Section>
-        </Container>
-        <Container>
-          <Section bordered="true" xs={12} lg={6}>
-            <Image desktop src='/images/consumer.svg' />
-          </Section>
-          <Section xs={12} lg={6}>
-            <Image desktop src='/images/producer.svg' />
-          </Section>
-        </Container>
-      </Wrapper>
-    );
-  }
-}
+export default () => (
+  <Wrapper nomargin white className='section_benefit'>
+    <Container>
+      <Section bordered="true" xs={12} lg={6}>
+        <SubTitle violet>
+          <T value="benefit.consumer.header" />
+        </SubTitle>
+        <List>
+          <li><T value="benefit.consumer.points.0" dangerousHTML /></li>
+          <li><T value="benefit.consumer.points.1" dangerousHTML /></li>
+          <li><T value="benefit.consumer.points.2" dangerousHTML /></li>
+        </List>
+        <T value="benefit.img.consumer_mobile" dangerousHTML/>
+      </Section>
+      <Section xs={12} lg={6}>
+        <SubTitle violet>
+          <T value="benefit.producer.header" />
+        </SubTitle>
+        <List>
+          <li><T value="benefit.producer.points.0" dangerousHTML /></li>
+          <li><T value="benefit.producer.points.1" dangerousHTML /></li>
+          <li><T value="benefit.producer.points.2" dangerousHTML /></li>
+          <li><T value="benefit.producer.points.3" dangerousHTML /></li>
+          <li><T value="benefit.producer.points.4" dangerousHTML /></li>
+        </List>
+        <T value="benefit.img.producer" dangerousHTML />
+      </Section>
+    </Container>
+    <Container>
+      <Section desktop="true" bordered="true" xs={12} lg={6}>
+        <T value="benefit.img.consumer" dangerousHTML />
+      </Section>
+      <Section desktop="true" xs={12} lg={6}>
+        <T value="benefit.img.producer" dangerousHTML />
+      </Section>
+    </Container>
+  </Wrapper>
+);

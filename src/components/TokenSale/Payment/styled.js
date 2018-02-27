@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { Row, Col } from 'react-flexbox-grid';
-import media from '../../../styled-components/media';
 import { SubTitle } from './../../Main/styled';
 
 export const Image = styled.img`

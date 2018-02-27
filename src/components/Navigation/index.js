@@ -1,10 +1,10 @@
 import React from 'react';
 import { GoTo, Container, SidebarContainer } from './styled';
-import media from '../../styled-components/media';
+import { Translate as T } from 'react-i18nify';
 
 const navigation = [
   {
-    title: 'ТОКЕНЫ',
+    title: <T value="navigation.tokens" />,
     className: 'section_home',
   },
   // {
@@ -16,51 +16,51 @@ const navigation = [
   //   className: 'section_whatIs',
   // },
   {
-    title: 'КАК РАБОТАЕТ OIN',
+    title: <T value="navigation.work" />,
     className: 'section_work',
   },
   // {
   //   title: 'COMPANIES',
   //   className: 'section_companies',
   // },
-  // {
-  //   title: 'ADVISERS',
-  //   className: 'section_advisers',
-  // },
   {
-    title: 'ДОРОЖНАЯ КАРТА',
+    title: <T value="navigation.roadmap" />,
     className: 'section_roadmap',
   },
   {
-    title: 'ОСНОВАТЕЛИ',
+    title: <T value="navigation.speakers" />,
+    className: 'section_speakers',
+  },
+  {
+    title: <T value="navigation.founders" />,
     className: 'section_founders',
   },
   {
-    title: 'КОМАНДА',
+    title: <T value="navigation.team" />,
     className: 'section_team',
   },
   {
-    title: 'КОНСУЛЬТАНТЫ',
-    className: 'section_advisers',
+    title: <T value="navigation.advisors" />,
+    className: 'section_advisors',
   },
   // {
   //   title: 'PARTNERS',
   //   className: 'section_partners',
   // },
   {
-    title: 'ПРОДАЖА ТОКЕНОВ',
+    title: <T value="navigation.tokenSale" />,
     className: 'section_tokenSale',
   },
   {
-    title: 'ПРОСТРАНСТВО OIN',
+    title: <T value="navigation.summary" />,
     className: 'section_summary',
   },
   {
-    title: 'ПРИЛОЖЕНИЕ',
+    title: <T value="navigation.app" />,
     className: 'section_app',
   },
   {
-    title: 'ДОКУМЕНТЫ',
+    title: <T value="navigation.documents" />,
     className: 'section_documents',
   },
   // {
@@ -75,8 +75,6 @@ const scrollTo = (selector) => {
   const width = window.innerWidth
   || document.documentElement.clientWidth
   || document.body.clientWidth;
-
-  console.log(width);
 
   window.scroll({ top: elem.offsetTop - (width < 768 ? 75 : 150), left: window.scrollX, behavior: 'auto' });
 }

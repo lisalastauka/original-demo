@@ -27,6 +27,12 @@ export const Column = styled(Col)`
   ${props => props.desktop && media.tablet`
     display: block;
   `}
+
+  img {
+    width: 100%;
+    border-radius: 50px;
+    margin: -20px -20px 0;
+  }
 `;
 
 export const Description = styled(SubTitle)`
@@ -36,11 +42,4 @@ export const Description = styled(SubTitle)`
     margin-bottom: 75px;
     height: 90px;
   `}
-`;
-
-
-export const Image = styled.img`
-  width: 100%;
-  border-radius: 50px;
-  margin: -20px -20px 0;
 `;

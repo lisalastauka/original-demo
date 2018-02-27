@@ -1,7 +1,7 @@
 import React from 'react';
-import { socials } from './../../constants/texts';
-import { Header, Description, Section, Image, Content } from './styled';
+import { Translate as T } from 'react-i18nify';
 import { Container, Title, Wrapper } from './../Main/styled';
+import { Header, Section, Image, Content } from './styled';
 
 const content = [
   {
@@ -51,7 +51,9 @@ export default class Socials extends React.Component {
     return (
       <Wrapper white className='section_contact'>
         <Container>
-          <Title violet>{socials.title}</Title>
+          <Title violet>
+            <T value="socials.title" dangerousHTML />
+          </Title>
           <Content center='xs'>
             {content.map(
               (item) =>

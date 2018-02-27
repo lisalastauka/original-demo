@@ -1,46 +1,63 @@
 import React from 'react';
-import { Row, Col } from 'react-flexbox-grid';
-import { summary } from './../../constants/texts';
-import { Section, Header, List} from './styled';
+import { Row } from 'react-flexbox-grid';
+import { Translate as T } from 'react-i18nify';
 import { Wrapper, SubTitle, Container, Title } from './../Main/styled';
+import { Section, List} from './styled';
 
-export default class Summary extends React.Component {
-  render() {
-    const {content, title} = summary;
-    return (
-      <Wrapper violet className='section_summary'>
-        <Container desktop>
-          <Title dashed='violet' white>{title}</Title>
-          <Row between='xs'>
-            <Section xs={12} md={6}>
-              <SubTitle white>{content[0].title}</SubTitle>
-              <List>
-                {content[0].list.map(item => <li>{item}</li>)}
-              </List>
-            </Section>
-            <Section xs={12} md={6}>
-              <SubTitle white>{content[1].title}</SubTitle>
-              <List>
-                {content[1].list.map(item => <li>{item}</li>)}
-              </List>
-            </Section>
-          </Row>
-          <Row>
-            <Section nomargin xs={12} md={6}>
-              <SubTitle white>{content[2].title}</SubTitle>
-              <List>
-                {content[2].list.map(item => <li>{item}</li>)}
-              </List>
-            </Section>
-            <Section nomargin xs={12} md={6}>
-              <SubTitle white>{content[3].title}</SubTitle>
-              <List>
-                {content[3].list.map(item => <li>{item}</li>)}
-              </List>
-            </Section>
-          </Row>
-        </Container>
-      </Wrapper>
-    );
-  }
-}
+export default () => (
+  <Wrapper violet className='section_summary'>
+    <Container desktop>
+      <Title dashed='violet' white>
+        <T value="summary.title" dangerousHTML />
+      </Title>
+      <Row between='xs'>
+        <Section xs={12} md={6}>
+          <SubTitle white>
+            <T value="summary.content.0.title" dangerousHTML />
+          </SubTitle>
+          <List>
+            <li><T value="summary.content.0.list.0" dangerousHTML /></li>
+            <li><T value="summary.content.0.list.1" dangerousHTML /></li>
+            <li><T value="summary.content.0.list.2" dangerousHTML /></li>
+            <li><T value="summary.content.0.list.3" dangerousHTML /></li>
+            <li><T value="summary.content.0.list.4" dangerousHTML /></li>
+          </List>
+        </Section>
+        <Section xs={12} md={6}>
+          <SubTitle white>
+            <T value="summary.content.1.title" dangerousHTML />
+          </SubTitle>
+          <List>
+            <li><T value="summary.content.1.list.0" dangerousHTML /></li>
+            <li><T value="summary.content.1.list.1" dangerousHTML /></li>
+            <li><T value="summary.content.1.list.2" dangerousHTML /></li>
+          </List>
+        </Section>
+      </Row>
+      <Row>
+        <Section nomargin='true' xs={12} md={6}>
+          <SubTitle white>
+            <T value="summary.content.2.title" dangerousHTML />
+          </SubTitle>
+          <List>
+            <li><T value="summary.content.2.list.0" dangerousHTML /></li>
+            <li><T value="summary.content.2.list.1" dangerousHTML /></li>
+            <li><T value="summary.content.2.list.2" dangerousHTML /></li>
+            <li><T value="summary.content.2.list.3" dangerousHTML /></li>
+          </List>
+        </Section>
+        <Section nomargin='true' xs={12} md={6}>
+          <SubTitle white>
+            <T value="summary.content.3.title" dangerousHTML />
+          </SubTitle>
+          <List>
+            <li><T value="summary.content.3.list.0" dangerousHTML /></li>
+            <li><T value="summary.content.3.list.1" dangerousHTML /></li>
+            <li><T value="summary.content.3.list.2" dangerousHTML /></li>
+            <li><T value="summary.content.3.list.3" dangerousHTML /></li>
+          </List>
+        </Section>
+      </Row>
+    </Container>
+  </Wrapper>
+);

@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Row, Col } from 'react-flexbox-grid';
 import { SubTitle } from './../Main/styled';
 import media from '../../styled-components/media';
 

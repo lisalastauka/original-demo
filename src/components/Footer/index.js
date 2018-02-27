@@ -1,7 +1,6 @@
 import React from 'react';
-import { Row } from 'react-flexbox-grid';
-import { footer } from './../../constants/texts';
-import { Container, Wrapper, SubTitle } from './../Main/styled';
+import { Translate as T } from 'react-i18nify';
+import { Container, Wrapper } from './../Main/styled';
 import Navigation from './../Navigation';
 import { Content, Header } from './styled';
 
@@ -12,9 +11,12 @@ export default class Footer extends React.Component {
         <Container>
           <Content>
             <Header white>
-              © 2018 Oin
+              <T value="footer.title" dangerousHTML />
             </Header>
-            {footer.map(text => <p>{text}</p>)}
+            <p><T value="footer.content.0" dangerousHTML /></p>
+            <p><T value="footer.content.1" dangerousHTML /></p>
+            <p><T value="footer.content.2" dangerousHTML /></p>
+            <p><T value="footer.content.3" dangerousHTML /></p>
             <Navigation white />
           </Content>
         </Container>

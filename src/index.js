@@ -1,8 +1,26 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
+import { Provider } from 'react-redux';
+import { I18n } from 'react-i18nify';
+import { render } from 'react-dom';
 import registerServiceWorker from './registerServiceWorker';
-import './styled-components/global';
+import { store } from './_config';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import './styled-components/global';
+import * as translations from './constants/translations';
+import App from './App';
+
+if (!localStorage.language) {
+ localStorage.language = 'en';
+}
+
+I18n.setLocale(localStorage.language);
+I18n.setTranslations(translations);
+
+render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('root')
+);
+
 registerServiceWorker();

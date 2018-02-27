@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import media from '../../../styled-components/media';
-import { Row, Col } from 'react-flexbox-grid';
+import { Row } from 'react-flexbox-grid';
 
 export const Container = styled(Row)`
   padding-left: 25px;
@@ -14,5 +14,8 @@ export const Container = styled(Row)`
   select {
     height: 15px;
     border: none;
+  }
+  option {
+    background:url(../images/locals/en.svg) no-repeat; padding-left:16px;
   }
 `;

@@ -1,6 +1,5 @@
 import React from 'react';
 import { Chart } from './styled';
-import media from '../../../styled-components/media';
 
 export default ({percentage = 30}) => (
   <Chart>

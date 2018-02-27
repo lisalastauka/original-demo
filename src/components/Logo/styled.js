@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import media from '../../styled-components/media';
-import { Row } from 'react-flexbox-grid';
 
 export const LogoTop = styled.img`
   width: 55px;

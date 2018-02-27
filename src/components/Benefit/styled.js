@@ -65,29 +65,39 @@ export const Content = styled(Row)`
 export const Section = styled(Col)`
   padding: 75px 25px 0;
   border: none;
+
+  :last-child {
+    padding-bottom: 0;
+  }
+
+  img {
+    max-width: 680px;
+    max-height: 660px;
+    width: 100%;
+  }
+
   ${media.tablet`
     padding: 120px 140px 0 80px;
+  `}
+  ${media.desktop`
+    img {
+      display: none;
+    }
   `}
   ${props => props.bordered && media.desktop `
     border-right: 1px solid ${props.theme.colors.violet};
     padding: 120px 30px 140px 110px;
   `}
-  :last-child {
-    padding-bottom: 0;
-  }
-`;
-
-export const Image = styled.img`
-  max-width: 680px;
-  max-height: 660px;
-  width: 100%;
-  ${media.desktop`
-    display: none;
-  `}
   ${props => props.desktop && `
-    display: none;
+    img {
+      display: none;
+    }
   `}
   ${props => props.desktop && media.desktop`
-    display: unset;
+    img {
+      display: unset;
+    }
   `}
+
+
 `;

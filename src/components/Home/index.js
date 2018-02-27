@@ -1,60 +1,63 @@
 import React from 'react';
-import { Status, LinkGroup, Title, Thoung, Content, Link, H1, ContainerThoung, Divider } from './styled';
-import { Container, Wrapper, SubTitle } from './../Main/styled';
-import { home } from './../../constants/texts';
-import Timer from './Timer';
+import { Translate as T } from 'react-i18nify';
 import { Row, Col } from 'react-flexbox-grid';
-import { Oin } from './../Logo';
+import { Container, SubTitle } from './../Main/styled';
+import Timer from './Timer';
+import { Status, Title, Thoung, Content, Link, H1, ContainerThoung, Divider, HomeWrapper } from './styled';
 
-export default class Home extends React.Component {
-  render() {
-    return(
-      <Wrapper home className='section_home'>
-        <Container main>
-          <H1>
-            <span>
-              <span style={{whiteSpace : 'nowrap'}}>ПР<Oin />СТРАНСТВО</span>{' '}
-              <span style={{whiteSpace : 'nowrap'}}>Д<Oin />ВЕРИЯ</span>{' '}
-              <span style={{whiteSpace : 'nowrap'}}>ПОТРЕБИТЕЛЕЙ</span>
-            </span>
-          </H1>
-          <SubTitle white main dangerouslySetInnerHTML={{__html: home.description}}/>
-        </Container>
-        <Thoung>
-          <Content>
-            <ContainerThoung>
-              <Status start='xs'>
-                <Col xs={12} md={5} lg={4}>
-                  <Row>
-                    <Col xs={4} sm={5} md={8} lg={12}>
-                      <Title purple dangerouslySetInnerHTML={{__html: home.tokenSaleStatus}} />
-                    </Col>
-                    <Col xs={5} smOffset={1} mdOffset={0} md={12}>
-                      <Divider />
-                      <Link href='/WP.pdf' target="_blank">{home.whitePaper}</Link>
-                    </Col>
-                  </Row>
+
+export default () => (
+  <HomeWrapper className='section_home'>
+    <Container main>
+      <H1>
+        <T value="home.title" dangerousHTML />
+      </H1>
+      <SubTitle white main>
+        <T value="home.description" dangerousHTML />
+      </SubTitle>
+    </Container>
+    <Thoung>
+      <Content>
+        <ContainerThoung>
+          <Status start='xs'>
+            <Col xs={12} md={5} lg={4}>
+              <Row>
+                <Col xs={4} sm={5} md={8} lg={12}>
+                  <Title purple>
+                    <T value="home.status" dangerousHTML />
+                  </Title>
                 </Col>
-                <Col style={{display: 'flex', flexDirection: 'column', margin: 'auto 0'}} xs={12} md={6} lg={5}>
-                  <SubTitle style={{ marginBottom: '27px'}} violet dangerouslySetInnerHTML={{__html: home.tokenSaleDetails}} />
-                  <SubTitle purple>{home.tokenSaleStart}</SubTitle>
-                  <Timer />
+                <Col xs={5} smOffset={1} mdOffset={0} md={12}>
+                  <Divider />
+                  <Link href='/White Paper OIN SPACE eng_v1.0.pdf' target="_blank">
+                    <T value="home.whitePaper" dangerousHTML />
+                  </Link>
                 </Col>
-              </Status>
-            </ContainerThoung>
-          </Content>
-        </Thoung>
-        <Container nopaddingtop>
+              </Row>
+            </Col>
+            {/*FIXME: Remove inline style*/}
+            <Col style={{display: 'flex', flexDirection: 'column', margin: 'auto 0'}} xs={12} md={6} lg={5}>
+              {/*FIXME: Remove inline style*/}
+              <SubTitle style={{ marginBottom: '27px'}} violet>
+                <T value="home.details" dangerousHTML />
+              </SubTitle>
+              <SubTitle purple>
+                <T value="home.start" dangerousHTML />
+              </SubTitle>
+              <Timer />
+            </Col>
+          </Status>
+        </ContainerThoung>
+      </Content>
+    </Thoung>
+    <Container nopaddingtop>
 
+      {/*NOTE: Uncomment when needed*/}
+      {/* <LinkGroup between="xs"> <Link href='/WP.pdf'>{home.whitePaper}</Link>
+        <Link href=''>{home.onePager}</Link>
+          <Link href=''>{home.downloadApp}</Link>
+        <Link href=''>{home.whiteList}</Link>     </LinkGroup>*/}
 
-
-          {/* <LinkGroup between="xs"> <Link href='/WP.pdf'>{home.whitePaper}</Link>
-            <Link href=''>{home.onePager}</Link>
-              <Link href=''>{home.downloadApp}</Link>
-            <Link href=''>{home.whiteList}</Link>     </LinkGroup>*/}
-
-        </Container>
-      </Wrapper>
-    );
-  }
-}
+    </Container>
+  </HomeWrapper>
+)
