@@ -7,7 +7,6 @@ import HowItWorks from '../HowItWorks';
 /* import Companies from '../Companies'; */
 import Advisors from '../Advisors';
 import Founders from '../Founders';
-import Speakers from '../Speakers';
 import Team from '../Team';
 /* import Partners from '../Partners'; */
 import TokenSale from '../TokenSale';
@@ -35,7 +34,6 @@ export default class Main extends React.Component {
         <Market />
         <Roadmap />
         {/* <Companies /> */}
-        <Speakers />
         <Founders />
         <Team />
         <Advisors />

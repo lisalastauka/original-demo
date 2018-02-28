@@ -41,7 +41,7 @@ const renderer = ({ days, hours, minutes, seconds, completed }) => {
     );
   }
 };
-var dateString = "2018-03-08 00:00:00";
+var dateString = "2018-03-15 00:00:00";
 var d = new Date(dateString.replace(/-/g, '/'));
 
 export default () => (

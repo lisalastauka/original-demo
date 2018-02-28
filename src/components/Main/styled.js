@@ -13,7 +13,7 @@ export const Title = styled.div`
   font-family: ${props => props.theme.fonts.avenir.light}, sans-serif;
   text-align: center;
   margin: 0 auto 40px;
-  word-break: break-word;
+  word-break: keep-all;
   text-transform: uppercase;
   width: fit-content;
   display: block;

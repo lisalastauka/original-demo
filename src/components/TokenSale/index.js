@@ -10,13 +10,11 @@ import { Header, Description, Section, Line, Blocks, Sub, Key } from './styled';
 
 
 const hard = '30,000 ​ETH';
-const original = '15,000 ​ETH';
 const soft = '5,000 ETH';
 const token = 'ORIGINAL (OIN)';
 const rate = '1 ​OIN = 0.0001 ETH';
-const protocol = 'ERC-20';
 const emission = '300 000 000 OIN';
-const volume = '195 000 000 OIN';
+const protocol = 'ERC-20';
 
 export default () => (
   <Wrapper white className='section_tokenSale'>
@@ -38,9 +36,6 @@ export default () => (
             <Key><T value="sale.hardCap" /></Key> : {hard}
           </Line>
           <Line>
-            <Key><T value="sale.originalCap" /></Key> : {original}
-          </Line>
-          <Line>
             <Key><T value="sale.softCap" /></Key> : {soft}
           </Line>
           <Line>
@@ -53,9 +48,6 @@ export default () => (
           </Line>
           <Line>
             <Key><T value="sale.emission" /></Key> : {emission}
-          </Line>
-          <Line>
-            <Key><T value="sale.volume" /></Key> : {volume}
           </Line>
           <Line>
             <Key><T value="sale.protocol" /></Key> : {protocol}

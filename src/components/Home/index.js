@@ -29,7 +29,7 @@ export default () => (
                 </Col>
                 <Col xs={5} smOffset={1} mdOffset={0} md={12}>
                   <Divider />
-                  <Link href='/White Paper OIN SPACE eng_v1.0.pdf' target="_blank">
+                  <Link>
                     <T value="home.whitePaper" dangerousHTML />
                   </Link>
                 </Col>

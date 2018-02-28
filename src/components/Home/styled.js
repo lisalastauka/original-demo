@@ -162,39 +162,41 @@ export const LinkGroup = styled(Row)`
   `}
 `;
 
-export const Link = styled.a`
-  flex-grow: 100;
-  display: block;
-  min-width: 128px;
-  max-width: 192px;
-  padding: 15px 10px;
-  font-size: 14px;
-  text-transform: uppercase;
-  font-family: ${props => props.theme.fonts.roboto.light};
-  white-space: nowrap;
-  text-align: center;
-  margin: 10px 5px;
-  border-radius: 8px;
-  ${media.desktop`
+export const Link = styled.div`
+  a {
+    flex-grow: 100;
+    display: block;
+    min-width: 128px;
     max-width: 192px;
-    height: 62px;
-    padding: 20px 25px;
-    font-size: 18px;
-  `}
-  :link {
-    background: ${props => props.theme.colors.violet};
-    color: white;
-  }
-  :visited {
-    background: ${props => props.theme.colors.violet};
-    color: white;
-  }
-  :hover {
-    background: ${props => props.theme.colors.purple};
-    color: white;
-  }
-  :active {
-    background: white;
-    color: ${props => props.theme.colors.violet};
+    padding: 15px 10px;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-family: ${props => props.theme.fonts.roboto.light};
+    white-space: nowrap;
+    text-align: center;
+    margin: 10px 5px;
+    border-radius: 8px;
+    ${media.desktop`
+      max-width: 192px;
+      height: 62px;
+      padding: 20px 25px;
+      font-size: 18px;
+    `}
+    :link {
+      background: ${props => props.theme.colors.violet};
+      color: white;
+    }
+    :visited {
+      background: ${props => props.theme.colors.violet};
+      color: white;
+    }
+    :hover {
+      background: ${props => props.theme.colors.purple};
+      color: white;
+    }
+    :active {
+      background: white;
+      color: ${props => props.theme.colors.violet};
+    }
   }
 `;
